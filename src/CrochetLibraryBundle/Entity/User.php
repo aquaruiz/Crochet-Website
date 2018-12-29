@@ -2,7 +2,9 @@
 
 namespace CrochetLibraryBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use SoftUniBlogBundle\Entity\Role;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
@@ -84,6 +86,24 @@ class User implements UserInterface
      * @ORM\Column(name="difficulty_rate_id", type="integer", nullable=true)
      */
     private $difficultyRateId;
+
+    /**
+     * @var ArrayCollection
+     * @ORM\ManyToMany(targetEntity="CrochetLibraryBundle\Entity\Role")
+     * @ORM\JoinTable(name="users_roles",
+     *     joinColumns={@ORM\JoinColumn(name="id", referencedColumnName="id")},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="role_id", referencedColumnName="id")}
+     *     )
+     */
+    private $roles;
+
+    /**
+     * User constructor.
+     */
+    public function __construct()
+    {
+        $this->roles = new ArrayCollection();
+    }
 
 
     /**
@@ -324,11 +344,18 @@ class User implements UserInterface
      * and populated in any number of different ways when the user object
      * is created.
      *
-     * @return (Role|string)[] The user roles
+     * @return array (Role|string)[] The user roles
      */
     public function getRoles()
     {
-        // TODO: Implement getRoles() method.
+        $stringRoles = [];
+
+        foreach ($this->roles as $role) {
+            /** @var Role $role */
+            $stringRoles[] = $role->getRole();
+        }
+
+        return $stringRoles;
     }
 
     /**
@@ -352,5 +379,30 @@ class User implements UserInterface
     public function eraseCredentials()
     {
         // TODO: Implement eraseCredentials() method.
+    }
+
+    /**
+     * @param Role $role
+     * @return User
+     */
+    public function addRole(Role $role)
+    {
+        $this->roles[] = $role;
+        return $this;
+    }
+
+
+    /**
+     * @return bool
+     */
+    public function isAdmin(){
+        return in_array('ROLE_ADMIN', $this->getRoles());
+    }
+
+    /**
+     * @return bool
+     */
+    public function isModerator(){
+        return in_array('ROLE_MODERATOR', $this->getRoles());
     }
 }

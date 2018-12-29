@@ -18,10 +18,11 @@ class UserController extends Controller
      */
     public function registerAction(Request $request)
     {
-        var_dump($request);
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
+
+        var_dump($form);
 
         if($form->isSubmitted()){
             $password = $this->get('security.password_encoder')
