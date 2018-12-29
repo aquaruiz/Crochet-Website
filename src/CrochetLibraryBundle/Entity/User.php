@@ -4,7 +4,7 @@ namespace CrochetLibraryBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use SoftUniBlogBundle\Entity\Role;
+use CrochetLibraryBundle\Entity\Role;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
@@ -382,10 +382,10 @@ class User implements UserInterface
     }
 
     /**
-     * @param Role $role
+     * @param \CrochetLibraryBundle\Entity\Role $role
      * @return User
      */
-    public function addRole(Role $role)
+    public function addRole(\CrochetLibraryBundle\Entity\Role $role)
     {
         $this->roles[] = $role;
         return $this;

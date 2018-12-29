@@ -9,11 +9,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/default/dashboard.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/dashboard.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/security/login.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/user/profile.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/user/profile.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/user/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/user/register.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/security.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/security.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/SecurityController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CrochetLibraryBundle/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrochetLibraryBundle/Entity/User.php" afterDir="false" />
@@ -32,12 +32,21 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Entity/Role.php">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/user/register.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="33" column="88" selection-start-line="33" selection-start-column="88" selection-end-line="33" selection-end-column="88" />
+            <state relative-caret-position="87">
+              <caret line="14" column="69" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/UserController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="34" column="42" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
               <folding>
-                <element signature="e#47#95#0#PHP" expanded="true" />
+                <element signature="e#51#88#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -46,8 +55,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Entity/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="92" column="41" selection-start-line="92" selection-start-column="41" selection-end-line="92" selection-end-column="41" />
+            <state relative-caret-position="308">
+              <caret line="391" column="5" selection-start-line="391" selection-start-column="5" selection-end-line="391" selection-end-column="5" />
               <folding>
                 <element signature="e#47#95#0#PHP" expanded="true" />
               </folding>
@@ -58,8 +67,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Form/UserType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
+            <state relative-caret-position="359">
+              <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
               <folding>
                 <element signature="e#45#85#0#PHP" expanded="true" />
               </folding>
@@ -74,6 +83,8 @@
       <find>App</find>
       <find>SoftUniBlogBundle</find>
       <find>role</find>
+      <find>use</find>
+      <find>add</find>
     </findStrings>
     <replaceStrings>
       <replace>CrochetLibraryBundle</replace>
@@ -94,13 +105,13 @@
         <option value="$PROJECT_DIR$/app/Resources/views/default/dashboard.html.twig" />
         <option value="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/SecurityController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/user/register.html.twig" />
-        <option value="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/UserController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/security/login.html.twig" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
-        <option value="$PROJECT_DIR$/src/CrochetLibraryBundle/Form/UserType.php" />
-        <option value="$PROJECT_DIR$/src/CrochetLibraryBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/src/CrochetLibraryBundle/Entity/Role.php" />
+        <option value="$PROJECT_DIR$/src/CrochetLibraryBundle/Entity/User.php" />
+        <option value="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/UserController.php" />
+        <option value="$PROJECT_DIR$/src/CrochetLibraryBundle/Form/UserType.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/user/register.html.twig" />
       </list>
     </option>
   </component>
@@ -343,12 +354,12 @@
       <updated>1546091306379</updated>
       <workItem from="1546091336133" duration="1220000" />
       <workItem from="1546093357556" duration="1569000" />
-      <workItem from="1546099572182" duration="6863000" />
+      <workItem from="1546099572182" duration="8487000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9652000" />
+    <option name="totallyTimeSpent" value="11276000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
@@ -460,19 +471,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/user/register.html.twig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="e#51#88#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/SecurityController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -507,33 +505,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Form/UserType.php">
+    <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Entity/Role.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
+        <state relative-caret-position="347">
+          <caret line="49" column="25" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
           <folding>
-            <element signature="e#45#85#0#PHP" expanded="true" />
+            <element signature="e#47#95#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="34" column="42" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
+          <folding>
+            <element signature="e#51#88#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="92" column="41" selection-start-line="92" selection-start-column="41" selection-end-line="92" selection-end-column="41" />
+        <state relative-caret-position="308">
+          <caret line="391" column="5" selection-start-line="391" selection-start-column="5" selection-end-line="391" selection-end-column="5" />
           <folding>
             <element signature="e#47#95#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Entity/Role.php">
+    <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Form/UserType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="33" column="88" selection-start-line="33" selection-start-column="88" selection-end-line="33" selection-end-column="88" />
+        <state relative-caret-position="359">
+          <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
           <folding>
-            <element signature="e#47#95#0#PHP" expanded="true" />
+            <element signature="e#45#85#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/user/register.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="14" column="69" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
         </state>
       </provider>
     </entry>
