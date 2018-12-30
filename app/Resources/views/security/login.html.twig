@@ -1,18 +1,33 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <form name="authenticate" action="{{ path('security_login') }}" method="post">
-        <div>
-            <label> Username:
-                <input type="text" name="_username"/>
-            </label>
+    <div class="container body-content span=8 offset=2">
+        <div class="well">
+            <form name="authenticate" class="form-horizontal" action="{{ path('security_login') }}" method="post">
+                <fieldset>
+                    <legend>Login</legend>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="user_email">Username</label>
+                        <div class="col-sm-4 ">
+                            <input type="text" class="form-control" id="user_email" placeholder="Username" name="_username">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="password">Password</label>
+                        <div class="col-sm-4">
+                            <input type="password" class="form-control" id="password" placeholder="Password" name="_password">
+                        </div>
+                    </div>
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
+                    <div class="form-group">
+                        <div class="col-sm-4 col-sm-offset-4">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                            <a class="btn btn-default" href="{{ path('dashboard') }}">Cancel</a>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
         </div>
-        <div>
-            <label>Password:
-                <input type="password" name="_password"/>
-            </label>
-        </div>
-        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
-        <input type="submit" value="Login"/>
-    </form>
+    </div>
 {% endblock %}

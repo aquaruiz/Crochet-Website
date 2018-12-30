@@ -2,21 +2,38 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <title>{% block title %}Crochet Library!{% endblock %}</title>
+    <title>{% block main_title %}Crochet Library!{% endblock %}</title>
     {% block stylesheets %}
-
+        <link rel="stylesheet" href="{{ asset("styles/bootstrap.min.css") }}">
     {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
 </head>
 <body>
+<div class="container">
+    <header>Hello and Welcome to Our Crochet Library!</header>
+    {% block body %}
+        <p style="color: red">hello, welcome to our crochet library!</p>
+    {% endblock %}
 
-{% block sidebar %}
-    <p style="color: red">hello, welcome to our crochet library!</p>
-{% endblock %}
-{% block body %}
-    <p style="color: red">hello, welcome to our crochet library!</p>
-{% endblock %}
-{% block javascripts %}
-{% endblock %}
+    {# sidebar #}
+    <aside class="col-md-3 col-md-pull-9">
+        {% block sideabr %}
+            {#{{ render(controller("WebShopBundle:WebShop:sidebarMenu")) }}#}
+        {% endblock %}
+    </aside>
+
+    <hr />
+    <footer>
+        {% block footer %}
+            <p class="text-right">&copy; 2018 aquariuz </p>
+        {% endblock %}
+    </footer>
+
+    {% block javascripts %}
+        <script src="{{ asset("scripts/jquery-3.3.1.min.js") }}"></script>
+        <script src="{{ asset("scripts/moment.min.js") }}"></script>
+        <script src="{{ asset("scripts/bootstrap.js") }}"></script>
+    {% endblock %}
+</div>
 </body>
 </html>

@@ -22,20 +22,53 @@ class UserController extends Controller
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
+        if($form->isSubmitted() && $form->isValid()){
+            $usernameForm = $form->getData()->getUsername();
 
-        if($form->isSubmitted()){
+            $userForm = $this
+                ->getDoctrine()
+                ->getRepository(User::class)
+                ->findOneBy(['username' => $usernameForm]);
+
+            if(null !== $userForm){
+                $this->addFlash('info', "Username " . $usernameForm . " already taken!");
+                return $this->render('user/register.html.twig');
+            }
+
             $password = $this->get('security.password_encoder')
                 ->encodePassword($user, $user->getPassword());
+
+            $role = $this
+                ->getDoctrine()
+                ->getRepository(Role::class)
+                ->findOneBy(['name' => 'ROLE_USER']);
+
+            $user->addRole($role);
+
             $user->setPassword($password);
 
+            $file = $form->getData()->getPicture();
+
+            $fileName = md5(uniqid()) . '.' . $file->guessExtension();
+
+            try {
+                $file->move($this->getParameter('users_pictures_directory'),
+                    $fileName);
+            } catch (FileException $ex) {
+
+            }
+
+            $user->setPicture($fileName);
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();
 
-            return $this->redirectToRoute('security_login');
+            return $this->redirectToRoute("security_login");
         }
 
-        return $this->render('user/register.html.twig');
+        return $this->render('user/register.html.twig', [
+                'register_form' =>$form->createView()
+            ]);
     }
 
     /**

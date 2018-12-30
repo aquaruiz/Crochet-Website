@@ -4,14 +4,11 @@ namespace CrochetLibraryBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use CrochetLibraryBundle\Entity\Role;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * User
- *
- * @ORM\Table(name="users")
  * @ORM\Entity(repositoryClass="CrochetLibraryBundle\Repository\UserRepository")
+ * @ORM\Table(name="users")
  */
 class User implements UserInterface
 {
@@ -23,13 +20,6 @@ class User implements UserInterface
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=255)
-     */
-    private $name;
 
     /**
      * @var string
@@ -46,6 +36,30 @@ class User implements UserInterface
     private $password;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255)
+     */
+    private $name;
+
+    /**
+     * @var ArrayCollection
+     *
+     * @ORM\ManyToMany(targetEntity="CrochetLibraryBundle\Entity\Role")
+     *
+     * @ORM\JoinTable(name="users_roles",
+     *     joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="role_id", referencedColumnName="id")}
+     *   )
+     */
+    private $roles;
+
+    public function __construct()
+    {
+        $this->roles = new ArrayCollection();
+    }
+
+    /**
      * @var string|null
      *
      * @ORM\Column(name="portfolio", type="text", nullable=true)
@@ -60,54 +74,7 @@ class User implements UserInterface
     private $picture;
 
     /**
-     * @var int|null
-     *
-     * @ORM\Column(name="pattern_id", type="integer", nullable=true)
-     */
-    private $patternId;
-
-    /**
-     * @var int|null
-     *
-     * @ORM\Column(name="category_id", type="integer", nullable=true)
-     */
-    private $categoryId;
-
-    /**
-     * @var int|null
-     *
-     * @ORM\Column(name="like_id", type="integer", nullable=true)
-     */
-    private $likeId;
-
-    /**
-     * @var int|null
-     *
-     * @ORM\Column(name="difficulty_rate_id", type="integer", nullable=true)
-     */
-    private $difficultyRateId;
-
-    /**
-     * @var ArrayCollection
-     * @ORM\ManyToMany(targetEntity="CrochetLibraryBundle\Entity\Role")
-     * @ORM\JoinTable(name="users_roles",
-     *     joinColumns={@ORM\JoinColumn(name="id", referencedColumnName="id")},
-     *     inverseJoinColumns={@ORM\JoinColumn(name="role_id", referencedColumnName="id")}
-     *     )
-     */
-    private $roles;
-
-    /**
-     * User constructor.
-     */
-    public function __construct()
-    {
-        $this->roles = new ArrayCollection();
-    }
-
-
-    /**
-     * Get id.
+     * Get id
      *
      * @return int
      */
@@ -117,31 +84,7 @@ class User implements UserInterface
     }
 
     /**
-     * Set name.
-     *
-     * @param string $name
-     *
-     * @return User
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name.
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Set username.
+     * Set username
      *
      * @param string $username
      *
@@ -155,7 +98,7 @@ class User implements UserInterface
     }
 
     /**
-     * Get username.
+     * Get username
      *
      * @return string
      */
@@ -165,7 +108,7 @@ class User implements UserInterface
     }
 
     /**
-     * Set password.
+     * Set password
      *
      * @param string $password
      *
@@ -179,13 +122,37 @@ class User implements UserInterface
     }
 
     /**
-     * Get password.
+     * Get password
      *
      * @return string
      */
     public function getPassword()
     {
         return $this->password;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return User
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 
     /**
@@ -198,10 +165,8 @@ class User implements UserInterface
     public function setPortfolio($portfolio = null)
     {
         $this->portfolio = $portfolio;
-
         return $this;
     }
-
     /**
      * Get portfolio.
      *
@@ -211,7 +176,6 @@ class User implements UserInterface
     {
         return $this->portfolio;
     }
-
     /**
      * Set picture.
      *
@@ -222,10 +186,8 @@ class User implements UserInterface
     public function setPicture($picture = null)
     {
         $this->picture = $picture;
-
         return $this;
     }
-
     /**
      * Get picture.
      *
@@ -234,102 +196,6 @@ class User implements UserInterface
     public function getPicture()
     {
         return $this->picture;
-    }
-
-    /**
-     * Set patternId.
-     *
-     * @param int|null $patternId
-     *
-     * @return User
-     */
-    public function setPatternId($patternId = null)
-    {
-        $this->patternId = $patternId;
-
-        return $this;
-    }
-
-    /**
-     * Get patternId.
-     *
-     * @return int|null
-     */
-    public function getPatternId()
-    {
-        return $this->patternId;
-    }
-
-    /**
-     * Set categoryId.
-     *
-     * @param int|null $categoryId
-     *
-     * @return User
-     */
-    public function setCategoryId($categoryId = null)
-    {
-        $this->categoryId = $categoryId;
-
-        return $this;
-    }
-
-    /**
-     * Get categoryId.
-     *
-     * @return int|null
-     */
-    public function getCategoryId()
-    {
-        return $this->categoryId;
-    }
-
-    /**
-     * Set likeId.
-     *
-     * @param int|null $likeId
-     *
-     * @return User
-     */
-    public function setLikeId($likeId = null)
-    {
-        $this->likeId = $likeId;
-
-        return $this;
-    }
-
-    /**
-     * Get likeId.
-     *
-     * @return int|null
-     */
-    public function getLikeId()
-    {
-        return $this->likeId;
-    }
-
-    /**
-     * Set difficultyRateId.
-     *
-     * @param int|null $difficultyRateId
-     *
-     * @return User
-     */
-    public function setDifficultyRateId($difficultyRateId = null)
-    {
-        $this->difficultyRateId = $difficultyRateId;
-
-        return $this;
-    }
-
-    /**
-     * Get difficultyRateId.
-     *
-     * @return int|null
-     */
-    public function getDifficultyRateId()
-    {
-        return $this->difficultyRateId;
     }
 
     /**
@@ -344,13 +210,13 @@ class User implements UserInterface
      * and populated in any number of different ways when the user object
      * is created.
      *
-     * @return array (Role|string)[] The user roles
+     * @return (Role|string)[] The user roles
      */
     public function getRoles()
     {
         $stringRoles = [];
 
-        foreach ($this->roles as $role) {
+        foreach ($this->roles as $role){
             /** @var Role $role */
             $stringRoles[] = $role->getRole();
         }
@@ -383,26 +249,19 @@ class User implements UserInterface
 
     /**
      * @param \CrochetLibraryBundle\Entity\Role $role
+     *
      * @return User
      */
-    public function addRole(\CrochetLibraryBundle\Entity\Role $role)
+    public function addRole(Role $role)
     {
-        $this->roles[] = $role;
+        $this->roles[]= $role;
         return $this;
     }
-
 
     /**
      * @return bool
      */
     public function isAdmin(){
-        return in_array('ROLE_ADMIN', $this->getRoles());
-    }
-
-    /**
-     * @return bool
-     */
-    public function isModerator(){
-        return in_array('ROLE_MODERATOR', $this->getRoles());
+        return in_array("ROLE_ADMIN", $this->getRoles());
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace SoftUniBlogBundle\Repository;
+namespace CrochetLibraryBundle\Repository;
 
 /**
  * RoleRepository

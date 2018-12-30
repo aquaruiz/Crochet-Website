@@ -4,6 +4,10 @@ security:
         # http://symfony.com/doc/current/book/security.html#encoding-the-user-s-password
         CrochetLibraryBundle\Entity\User: bcrypt
 
+    role_hierarchy:
+        ROLE_ADMIN: [ROLE_MODERATOR, ROLE_USER]
+        ROLE_MODERATOR: [ROLE_USER]
+
     providers:
         # in this example, users are stored via Doctrine in the database
         # To see the users at src/AppBundle/DataFixtures/ORM/LoadFixtures.php

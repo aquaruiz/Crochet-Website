@@ -30,7 +30,8 @@ class Role
     private $name;
 
     /**
-     * @var ArrayCollection
+     * @var User[]|ArrayCollection
+     *
      * @ORM\ManyToMany(targetEntity="CrochetLibraryBundle\Entity\User", mappedBy="roles")
      */
     private $users;
@@ -74,9 +75,6 @@ class Role
         return $this->name;
     }
 
-    /**
-     * @return string
-     */
     public function getRole(){
         return $this->getName();
     }
