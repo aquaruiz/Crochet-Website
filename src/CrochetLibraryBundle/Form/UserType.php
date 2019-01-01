@@ -27,9 +27,11 @@ class UserType extends AbstractType
                     'second_options' => array('label' => 'Repeat Password'),
                 ])
             ->add('name', TextType::class)
-            ->add('portfolio', TextareaType::class)
+            ->add('portfolio', TextareaType::class,
+                ['required' => false])
             ->add('picture', FileType::class,
-                ['data' => null]);
+                ['data' => null,
+                    'required' => false]);
     }
 
     /**

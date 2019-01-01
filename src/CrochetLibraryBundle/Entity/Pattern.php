@@ -2,6 +2,7 @@
 
 namespace CrochetLibraryBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,23 +32,26 @@ class Pattern
     /**
      * @var string|null
      *
-     * @ORM\Column(name="prize", type="decimal", precision=10, scale=2, nullable=true)
+     * @ORM\Column(name="price", type="decimal", precision=10, scale=2, nullable=true)
      */
-    private $prize;
+    private $price;
 
     /**
-     * @var int
+     * @var User
      *
-     * @ORM\Column(name="designer_id", type="integer")
+     * @ORM\ManyToOne(targetEntity="CrochetLibraryBundle\Entity\User", inversedBy="patterns")
+     * @ORM\JoinColumn(name="designer_id", referencedColumnName="id")
+     *
      */
-    private $designerId;
+    private $designer;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="category_id", type="integer")
-     */
-    private $categoryId;
+//    /**
+//     * @var ArrayCollection|Category[]
+//     *
+//     * @ORM\OneToMany(targetEntity="CrochetLibraryBundle\Entity\Category", mappedBy="category", cascade={"remove"})
+//     *
+//     */
+//    private $categories;
 
     /**
      * @var \DateTime
@@ -56,12 +60,14 @@ class Pattern
      */
     private $publishedDate;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="yarn_id", type="integer")
-     */
-    private $yarnId;
+//    /**
+//     * @var Yarn
+//     *
+//     * @ORM\ManyToOne(targetEntity="CrochetLibraryBundle\Entity\Yarn", inversedBy="patterns")
+//     * @ORM\JoinColumn(name="yarnId", referencedColumnName="id")
+//     *
+//     */
+//    private $yarn;
 
     /**
      * @var string
@@ -71,11 +77,13 @@ class Pattern
     private $gauge;
 
     /**
-     * @var int
+     * @var Hook
      *
-     * @ORM\Column(name="hook_id", type="integer")
+     * @ORM\ManyToOne(targetEntity="CrochetLibraryBundle\Entity\Hook", inversedBy="patterns")
+     * @ORM\JoinColumn(name="hook_id", referencedColumnName="id")
+     *
      */
-    private $hookId;
+    private $hook;
 
     /**
      * @var string
@@ -105,20 +113,31 @@ class Pattern
      */
     private $file;
 
-    /**
-     * @var int|null
-     *
-     * @ORM\Column(name="like_id", type="integer", nullable=true)
-     */
-    private $likeId;
+//    /**
+//     * @var ArrayCollection|Rates[]
+//     *
+//     * @ORM\OneToMany(targetEntity="CrochetLibraryBundle\Entity\Rates", mappedBy="rate", cascade={"remove"})
+//     *
+//     */
+//    private $likes;
+
+//    /**
+//     * @var ArrayCollection|Difficulty[]
+//     *
+//     * @ORM\OneToMany(targetEntity="CrochetLibraryBundle\Entity\Difficulty", mappedBy="difficulty", cascade={"remove"})
+//     *
+//     */
+//    private $difficulty;
 
     /**
-     * @var int|null
-     *
-     * @ORM\Column(name="difficulty_id", type="integer", nullable=true)
+     * Pattern constructor.
+     * @throws \Exception
      */
-    private $difficultyId;
-
+    public function __construct()
+    {
+        $this->publishedDate = new \DateTime('now');
+//        $this->categories = new ArrayCollection();
+    }
 
     /**
      * Get id.
@@ -157,13 +176,13 @@ class Pattern
     /**
      * Set prize.
      *
-     * @param string|null $prize
+     * @param string|null $price
      *
      * @return Pattern
      */
-    public function setPrize($prize = null)
+    public function setPrice($price = null)
     {
-        $this->prize = $prize;
+        $this->price = $price;
 
         return $this;
     }
@@ -173,9 +192,9 @@ class Pattern
      *
      * @return string|null
      */
-    public function getPrize()
+    public function getPrice()
     {
-        return $this->prize;
+        return $this->price;
     }
 
     /**
@@ -185,46 +204,42 @@ class Pattern
      *
      * @return Pattern
      */
-    public function setDesignerId($designerId)
-    {
-        $this->designerId = $designerId;
-
-        return $this;
-    }
 
     /**
-     * Get designerId.
-     *
-     * @return int
+     * @return User
      */
-    public function getDesignerId()
+    public function getDesigner()
     {
-        return $this->designerId;
+        return $this->designer;
     }
 
     /**
-     * Set categoryId.
-     *
-     * @param int $categoryId
-     *
+     * @param User $designer
      * @return Pattern
      */
-    public function setCategoryId($categoryId)
+    public function setDesigner($designer)
     {
-        $this->categoryId = $categoryId;
-
+        $this->designer = $designer;
         return $this;
     }
 
-    /**
-     * Get categoryId.
-     *
-     * @return int
-     */
-    public function getCategoryId()
-    {
-        return $this->categoryId;
-    }
+//    /**
+//     * @return Category[]|ArrayCollection
+//     */
+//    public function getCategories()
+//    {
+//        return $this->categories;
+//    }
+//
+//    /**
+//     * @param Category|null $category
+//     * @return Pattern
+//     */
+//    public function addCategory(Category $category = null)
+//    {
+//        $this->categories = $category;
+//        return $this;
+//    }
 
     /**
      * Set publishedDate.
@@ -250,29 +265,23 @@ class Pattern
         return $this->publishedDate;
     }
 
-    /**
-     * Set yarnId.
-     *
-     * @param int $yarnId
-     *
-     * @return Pattern
-     */
-    public function setYarnId($yarnId)
-    {
-        $this->yarnId = $yarnId;
-
-        return $this;
-    }
-
-    /**
-     * Get yarnId.
-     *
-     * @return int
-     */
-    public function getYarnId()
-    {
-        return $this->yarnId;
-    }
+//    /**
+//     * @return Yarn
+//     */
+//    public function getYarn()
+//    {
+//        return $this->yarn;
+//    }
+//
+//    /**
+//     * @param Yarn $yarn
+//     * @return Pattern
+//     */
+//    public function setYarn($yarn)
+//    {
+//        $this->yarn = $yarn;
+//        return $this;
+//    }
 
     /**
      * Set gauge.
@@ -299,27 +308,21 @@ class Pattern
     }
 
     /**
-     * Set hookId.
-     *
-     * @param int $hookId
-     *
-     * @return Pattern
+     * @return Hook
      */
-    public function setHookId($hookId)
+    public function getHook()
     {
-        $this->hookId = $hookId;
-
-        return $this;
+        return $this->hook;
     }
 
     /**
-     * Get hookId.
-     *
-     * @return int
+     * @param Hook $hook
+     * @return Pattern
      */
-    public function getHookId()
+    public function setHook($hook)
     {
-        return $this->hookId;
+        $this->hook = $hook;
+        return $this;
     }
 
     /**
@@ -412,57 +415,10 @@ class Pattern
      * Get file.
      *
      * @return string|null
+     * @return string|null
      */
     public function getFile()
     {
         return $this->file;
-    }
-
-    /**
-     * Set likeId.
-     *
-     * @param int|null $likeId
-     *
-     * @return Pattern
-     */
-    public function setLikeId($likeId = null)
-    {
-        $this->likeId = $likeId;
-
-        return $this;
-    }
-
-    /**
-     * Get likeId.
-     *
-     * @return int|null
-     */
-    public function getLikeId()
-    {
-        return $this->likeId;
-    }
-
-    /**
-     * Set difficultyId.
-     *
-     * @param int|null $difficultyId
-     *
-     * @return Pattern
-     */
-    public function setDifficultyId($difficultyId = null)
-    {
-        $this->difficultyId = $difficultyId;
-
-        return $this;
-    }
-
-    /**
-     * Get difficultyId.
-     *
-     * @return int|null
-     */
-    public function getDifficultyId()
-    {
-        return $this->difficultyId;
     }
 }

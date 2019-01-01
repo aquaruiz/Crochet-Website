@@ -8,6 +8,9 @@ imports:
 parameters:
     locale: en
     users_pictures_directory: '%kernel.project_dir%/web/uploads/images/users'
+    patterns_pictures_directory: '%kernel.project_dir%/web/uploads/images/patterns/pictures'
+    patterns_files_directory: '%kernel.project_dir%/web/uploads/images/patterns/files'
+
 
 framework:
     #esi: ~

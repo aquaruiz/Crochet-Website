@@ -48,7 +48,6 @@ class UserController extends Controller
             $user->setPassword($password);
 
             $file = $form->getData()->getPicture();
-
             $fileName = md5(uniqid()) . '.' . $file->guessExtension();
 
             try {

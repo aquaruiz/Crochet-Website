@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block main_title %}View Pattern{% endblock %}
+
+{% block body %}
+    <div>
+        Name: {{ pattern.name }}
+    </div>
+    <div>
+        Text: {{ pattern.patternText }}
+    </div>
+    <div>
+        <img src="{{ asset('uploads/images/patterns/pictures/' ~ pattern.picture) }}" alt="{{ pattern.name }}" height="100px">
+    </div>
+    <div>
+        <a href="{{ asset('uploads/images/patterns/files/' ~ pattern.file) }}" download="pattern-{{ pattern.name }}">File</a>
+    </div>
+{% endblock %}

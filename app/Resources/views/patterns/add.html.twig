@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block main_title %}Add New Pattern{% endblock %}
+
+{% block body %}
+    {% for hook in hooks %}
+        {{ hook.size }}
+    {% endfor %}
+    {{ form_start(pattern_add_form) }}
+    {{ form_row(pattern_add_form.name) }}
+    {{ form_row(pattern_add_form.price) }}
+    {{ form_row(pattern_add_form.hook) }}
+    {{ form_row(pattern_add_form.gauge) }}
+    {{ form_row(pattern_add_form.yardage) }}
+    {{ form_row(pattern_add_form.patternText) }}
+    {{ form_row(pattern_add_form.picture) }}
+    {{ form_row(pattern_add_form.file) }}
+
+    <button class="btn btn-primary" formnovalidate>Add Pattern <span class="glyphicon glyphicon-arrow-right"></span>
+    </button>
+
+    {{ form_end(pattern_add_form) }}
+{% endblock %}
