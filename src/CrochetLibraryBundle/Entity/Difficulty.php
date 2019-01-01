@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Difficulty
  *
- * @ORM\Table(name="difficulty_levels")
+ * @ORM\Table(name="difficulties")
  * @ORM\Entity(repositoryClass="CrochetLibraryBundle\Repository\DifficultyRepository")
  */
 class Difficulty
@@ -29,18 +29,18 @@ class Difficulty
     private $level;
 
     /**
-     * @var int
+     * @var User
      *
-     * @ORM\Column(name="user_id", type="integer")
+     * @ORM\ManyToOne(targetEntity="CrochetLibraryBundle\Entity\User", inversedBy="difficulties")
      */
-    private $userId;
+    private $user;
 
     /**
-     * @var int
+     * @var Pattern
      *
-     * @ORM\Column(name="pattern_id", type="integer")
+     * @ORM\ManyToOne(targetEntity="CrochetLibraryBundle\Entity\Pattern", inversedBy="difficulties")
      */
-    private $patternId;
+    private $pattern;
 
 
     /**
@@ -78,50 +78,46 @@ class Difficulty
     }
 
     /**
-     * Set userId.
+     * Set user
      *
-     * @param int $userId
-     *
+     * @param User|null $user
      * @return Difficulty
      */
-    public function setUserId($userId)
+    public function setUser(User $user = null)
     {
-        $this->userId = $userId;
+        $this->user = $user;
 
         return $this;
     }
 
     /**
-     * Get userId.
+     * Get user
      *
-     * @return int
+     * @return User
      */
-    public function getUserId()
+    public function getUser()
     {
-        return $this->userId;
+        return $this->user;
     }
 
     /**
-     * Set patternId.
+     * Set pattern
      *
-     * @param int $patternId
-     *
+     * @param Pattern $pattern
      * @return Difficulty
      */
-    public function setPatternId($patternId)
+    public function setPattern($pattern)
     {
-        $this->patternId = $patternId;
-
+        $this->pattern = $pattern;
         return $this;
     }
 
     /**
-     * Get patternId.
-     *
-     * @return int
+     * Get pattern
+     * @return Pattern
      */
-    public function getPatternId()
+    public function getPattern()
     {
-        return $this->patternId;
+        return $this->pattern;
     }
 }

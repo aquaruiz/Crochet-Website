@@ -132,7 +132,7 @@ class Pattern
     /**
      * @var ArrayCollection|Difficulty[]
      *
-     * @ORM\OneToMany(targetEntity="CrochetLibraryBundle\Entity\Difficulty", mappedBy="difficulty", cascade={"remove"})
+     * @ORM\OneToMany(targetEntity="CrochetLibraryBundle\Entity\Difficulty", mappedBy="pattern", cascade={"remove"})
      *
      */
     private $difficulty;

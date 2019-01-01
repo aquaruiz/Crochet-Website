@@ -2,8 +2,10 @@
 
 namespace CrochetLibraryBundle\Controller;
 
+use CrochetLibraryBundle\Entity\Difficulty;
 use CrochetLibraryBundle\Entity\Hook;
 use CrochetLibraryBundle\Entity\Pattern;
+use CrochetLibraryBundle\Form\DifficultyType;
 use CrochetLibraryBundle\Form\PatternType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -94,7 +96,7 @@ class PatternController extends Controller
 
         return $this->render("patterns/view.html.twig",
             ['pattern' => $pattern,
-                'likable' => $likable]);
+                'likable' => $likable,]);
     }
 
     /**
