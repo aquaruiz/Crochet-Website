@@ -2,7 +2,9 @@
 
 namespace CrochetLibraryBundle\Form;
 
+use CrochetLibraryBundle\Entity\Category;
 use CrochetLibraryBundle\Entity\Hook;
+use CrochetLibraryBundle\Entity\Yarn;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -24,15 +26,27 @@ class PatternType extends AbstractType
         $builder->add('name', TextType::class)
             ->add('price', MoneyType::class,
                 ['label' => 'Set price for your pattern'])
-//            ->add('publishedDate', DateType::class)
             ->add("hook", EntityType::class,
                 array(
-                    'class' =>Hook::class,
+                    'placeholder' => 'Choose an option...',
+                    'class' => Hook::class,
                     'choice_label' => 'size'
                 ))
             ->add('gauge', TextType::class)
+//            ->add('yarn', EntityType::class,
+//                array(
+//                    'class' => Yarn::class
+//                ))
             ->add('yardage', TextType::class)
             ->add('patternText', TextareaType::class)
+            ->add("categories", EntityType::class,
+                array(
+                    'class' => Category::class,
+                    'choice_label' => 'name',
+                    'multiple' => true,
+//                    'required'   => false,
+                    'empty_data' => 'John Doe'
+                ))
             ->add('picture', FileType::class,
                 ['label' => 'Upload your JPG file'])
             ->add('file', FileType::class,

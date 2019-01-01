@@ -31,7 +31,7 @@ class PatternController extends Controller
         $form = $this->createForm(PatternType::class, $pattern);
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid()){
+        if ($form->isSubmitted() && $form->isValid()) {
             $currentUser = $this->getUser();
             $pattern->setDesigner($currentUser);
 
@@ -40,10 +40,10 @@ class PatternController extends Controller
 
             $picture = $form->getData()->getPicture();
             $file = $form->getData()->getFile();
-            $pictureName = md5(uniqid()) . '.' . $picture->guessExtension();
-            $fileName = md5(uniqid()) . '.' . $file->guessExtension();
 
             try {
+                $pictureName = md5(uniqid()) . '.' . $picture->guessExtension();
+                $fileName = md5(uniqid()) . '.' . $file->guessExtension();
                 $picture->move($this->getParameter('patterns_pictures_directory'), $pictureName);
                 $file->move($this->getParameter('patterns_files_directory'), $fileName);
             } catch (FileException $ex) {
@@ -66,8 +66,7 @@ class PatternController extends Controller
         }
 
         return $this->render('patterns/add.html.twig', [
-            'pattern_add_form' =>$form->createView(),
-            'hooks' => $hooks
+            'pattern_add_form' => $form->createView()
         ]);
     }
 
@@ -84,17 +83,48 @@ class PatternController extends Controller
             ->getRepository(Pattern::class)
             ->find($id);
 
-//        $comments = $this->getDoctrine()
-//            ->getRepository(Comment::class)
-//            ->findAllComments($pattern);
+        $user = $this->getUser();
+        $likable = false;
+        $likes = $pattern->getLikes();
 
-//        $pattern->setViewCount($pattern->getViewCount() + 1);
-        $em = $this->getDoctrine()->getManager();
-
-        $em->persist($pattern);
-        $em->flush();
+        if (!in_array($user, $likes->getValues())) {
+            $likable = true;
+            var_dump($likable);
+        }
 
         return $this->render("patterns/view.html.twig",
-            ['pattern' => $pattern]);
+            ['pattern' => $pattern,
+                'likable' => $likable]);
+    }
+
+    /**
+     * @Route("/pattern/{id}", name="pattern_likes")
+     * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function likes($id)
+    {
+        /**
+         * @var Pattern $pattern
+         */
+        $pattern = $this
+            ->getDoctrine()
+            ->getRepository(Pattern::class)
+            ->find($id);
+
+        $user = $this->getUser();
+        $em = $this->getDoctrine()->getManager();
+        $likes = $pattern->getLikes();
+
+        if (!in_array($user, $likes->getValues())) {
+            $pattern->setLikes($user);
+            $em->persist($pattern);
+            $em->flush();
+        }
+
+        return $this->render("patterns/view.html.twig",
+            ['pattern' => $pattern,
+                'likable' => false]);
     }
 }

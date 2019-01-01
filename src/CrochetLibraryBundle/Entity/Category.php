@@ -2,6 +2,7 @@
 
 namespace CrochetLibraryBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -34,6 +35,20 @@ class Category
      * @ORM\Column(name="parent", type="integer", nullable=true)
      */
     private $parent;
+
+    /**
+     * @var Pattern[]|ArrayCollection
+     * @ORM\ManyToMany(targetEntity="CrochetLibraryBundle\Entity\Pattern", mappedBy="categories", cascade={"remove"})
+     */
+    private $patterns;
+
+    /**
+     * Category constructor.
+     */
+    public function __construct()
+    {
+        $this->patterns = new ArrayCollection();
+    }
 
 
     /**
@@ -92,5 +107,21 @@ class Category
     public function getParent()
     {
         return $this->parent;
+    }
+
+    /**
+     * @return Pattern[]|ArrayCollection
+     */
+    public function getPatterns()
+    {
+        return $this->patterns;
+    }
+
+    /**
+     * @param Pattern $product
+     */
+    public function addProduct($product)
+    {
+        $this->patterns[] = $product;
     }
 }

@@ -6,12 +6,60 @@
         Name: {{ pattern.name }}
     </div>
     <div>
-        Text: {{ pattern.patternText }}
+        Categories:
+        <ul>
+            {% for category in pattern.categories %}
+                <li>{{ category.name }}</li>
+            {% endfor %}
+        </ul>
     </div>
     <div>
-        <img src="{{ asset('uploads/images/patterns/pictures/' ~ pattern.picture) }}" alt="{{ pattern.name }}" height="100px">
+        By: {{ pattern.designer.name }}
     </div>
     <div>
+        Price: {{ pattern.price }} $
+    </div>
+    <div>
+        Published on: {{ pattern.publishedDate|date("F jS \\a\\t g:ia", 'Europe/Sofia') }}
+    </div>
+    <div>
+        Gauge: {{ pattern.gauge }}
+    </div>
+    <div>
+        Yardage: {{ pattern.yardage }}
+    </div>
+    <div>
+        Description: {{ pattern.patternText }}
+    </div>
+    <div>
+        Hook Size: {{ pattern.hook.size }}
+    </div>
+    <div>
+        Hook Size Letter: {{ pattern.hook.letter }}
+    </div>
+    <div>
+        Pictures:
+        <img src="{{ asset('uploads/images/patterns/pictures/' ~ pattern.picture) }}" alt="{{ pattern.name }}"
+             height="100px">
+    </div>
+    <div>
+        Download your file:
         <a href="{{ asset('uploads/images/patterns/files/' ~ pattern.file) }}" download="pattern-{{ pattern.name }}">File</a>
     </div>
+    <div>
+        Likes:
+        {{ pattern.likes|length }}
+
+    </div>
+    {% if (likable) %}
+        <a class="btn btn"
+           href="{{ path('pattern_likes', {id: pattern.id}) }}">Like it!
+        </a>
+        {% else %}
+            You Liked This!
+    {% endif %}
+
+    {{ form_start(pattern_add_form) }}
+    {{ form_end(pattern_add_form) }}
+
 {% endblock %}

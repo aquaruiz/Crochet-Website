@@ -35,13 +35,13 @@ class Hook
      */
     private $letter;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="pattern_id", type="integer")
-     */
-    private $patternId;
-
+//    /**
+//     * @var int
+//     *
+//     * @ORM\Column(name="pattern_id", type="integer")
+//     */
+//    private $patternId;
+//
 
     /**
      * Get id.
@@ -100,28 +100,28 @@ class Hook
     {
         return $this->letter;
     }
-
-    /**
-     * Set patternId.
-     *
-     * @param int $patternId
-     *
-     * @return Hook
-     */
-    public function setPatternId($patternId)
-    {
-        $this->patternId = $patternId;
-
-        return $this;
-    }
-
-    /**
-     * Get patternId.
-     *
-     * @return int
-     */
-    public function getPatternId()
-    {
-        return $this->patternId;
-    }
+//
+//    /**
+//     * Set patternId.
+//     *
+//     * @param int $patternId
+//     *
+//     * @return Hook
+//     */
+//    public function setPatternId($patternId)
+//    {
+//        $this->patternId = $patternId;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get patternId.
+//     *
+//     * @return int
+//     */
+//    public function getPatternId()
+//    {
+//        return $this->patternId;
+//    }
 }

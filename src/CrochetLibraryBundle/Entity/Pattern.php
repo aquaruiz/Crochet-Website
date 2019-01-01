@@ -45,13 +45,17 @@ class Pattern
      */
     private $designer;
 
-//    /**
-//     * @var ArrayCollection|Category[]
-//     *
-//     * @ORM\OneToMany(targetEntity="CrochetLibraryBundle\Entity\Category", mappedBy="category", cascade={"remove"})
-//     *
-//     */
-//    private $categories;
+    /**
+     * @var ArrayCollection
+     *
+     * @ORM\ManyToMany(targetEntity="CrochetLibraryBundle\Entity\Category")
+     *
+     * @ORM\JoinTable(name="patterns_categories",
+     *     joinColumns={@ORM\JoinColumn(name="pattern_id", referencedColumnName="id")},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="category_id", referencedColumnName="id")}
+     *   )
+     */
+    private $categories;
 
     /**
      * @var \DateTime
@@ -59,12 +63,12 @@ class Pattern
      * @ORM\Column(name="published_date", type="datetime")
      */
     private $publishedDate;
-
+//
 //    /**
 //     * @var Yarn
 //     *
 //     * @ORM\ManyToOne(targetEntity="CrochetLibraryBundle\Entity\Yarn", inversedBy="patterns")
-//     * @ORM\JoinColumn(name="yarnId", referencedColumnName="id")
+//     * @ORM\JoinColumn(name="yarn_id", referencedColumnName="id")
 //     *
 //     */
 //    private $yarn;
@@ -113,21 +117,25 @@ class Pattern
      */
     private $file;
 
-//    /**
-//     * @var ArrayCollection|Rates[]
-//     *
-//     * @ORM\OneToMany(targetEntity="CrochetLibraryBundle\Entity\Rates", mappedBy="rate", cascade={"remove"})
-//     *
-//     */
-//    private $likes;
+    /**
+     * @var ArrayCollection
+     *
+     * @ORM\ManyToMany(targetEntity="CrochetLibraryBundle\Entity\User")
+     *
+     * @ORM\JoinTable(name="likes",
+     *     joinColumns={@ORM\JoinColumn(name="pattern_id", referencedColumnName="id")},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")}
+     *   )
+     */
+    private $likes;
 
-//    /**
-//     * @var ArrayCollection|Difficulty[]
-//     *
-//     * @ORM\OneToMany(targetEntity="CrochetLibraryBundle\Entity\Difficulty", mappedBy="difficulty", cascade={"remove"})
-//     *
-//     */
-//    private $difficulty;
+    /**
+     * @var ArrayCollection|Difficulty[]
+     *
+     * @ORM\OneToMany(targetEntity="CrochetLibraryBundle\Entity\Difficulty", mappedBy="difficulty", cascade={"remove"})
+     *
+     */
+    private $difficulty;
 
     /**
      * Pattern constructor.
@@ -136,7 +144,9 @@ class Pattern
     public function __construct()
     {
         $this->publishedDate = new \DateTime('now');
-//        $this->categories = new ArrayCollection();
+        $this->categories = new ArrayCollection();
+        $this->likes = new ArrayCollection();
+        $this->difficulty = new ArrayCollection();
     }
 
     /**
@@ -223,23 +233,23 @@ class Pattern
         return $this;
     }
 
-//    /**
-//     * @return Category[]|ArrayCollection
-//     */
-//    public function getCategories()
-//    {
-//        return $this->categories;
-//    }
-//
-//    /**
-//     * @param Category|null $category
-//     * @return Pattern
-//     */
-//    public function addCategory(Category $category = null)
-//    {
-//        $this->categories = $category;
-//        return $this;
-//    }
+    /**
+     * @return Category[]|ArrayCollection
+     */
+    public function getCategories()
+    {
+        return $this->categories;
+    }
+
+    /**
+     * @param Category|null $category
+     * @return Pattern
+     */
+    public function addCategory(Category $category = null)
+    {
+        $this->categories[] = $category;
+        return $this;
+    }
 
     /**
      * Set publishedDate.
@@ -264,7 +274,7 @@ class Pattern
     {
         return $this->publishedDate;
     }
-
+//
 //    /**
 //     * @return Yarn
 //     */
@@ -420,5 +430,41 @@ class Pattern
     public function getFile()
     {
         return $this->file;
+    }
+
+    /**
+     * @return User[]|ArrayCollection
+     */
+    public function getLikes()
+    {
+        return $this->likes;
+    }
+
+    /**
+     * @param User|null $likes
+     * @return Pattern
+     */
+    public function setLikes(User $likes = null)
+    {
+        $this->likes[] = $likes;
+        return $this;
+    }
+
+    /**
+     * @return Difficulty[]|ArrayCollection
+     */
+    public function getDifficulty()
+    {
+        return $this->difficulty;
+    }
+
+    /**
+     * @param Difficulty|null $difficulty
+     * @return Pattern
+     */
+    public function setDifficulty(Difficulty $difficulty = null)
+    {
+        $this->difficulty[] = $difficulty;
+        return $this;
     }
 }
