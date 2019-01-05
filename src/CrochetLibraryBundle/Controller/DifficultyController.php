@@ -56,4 +56,12 @@ class DifficultyController extends Controller
         return $this->render("rates/difficulty_level.html.twig",
             ['diff_form' => $form->createView()]);
     }
+
+    /**
+     * @Route("/browse/difficulties", name="patterns_by_diffs")
+     * @return void
+     */
+    public function indexAllDiffs(){
+
+    }
 }

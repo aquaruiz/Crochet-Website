@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {% if categories %}
+        <h2>List Active Categories</h2>
+        <ul style="list-style: none">
+            {% for category in categories %}
+                <li style="display: inline-block; margin: 15px; border: 1px solid lightcoral; padding: 15px; font-weight: bolder; color: yellowgreen; background-color: darkseagreen; width: fit-content; border-radius: 15px">
+                    <a class="" href="{{ path('category_view', {'id':category.id}) }}">{{ category.name|upper }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Dear {{ user.name|upper }}, <br> Please contact The admin and ask him to create some categories to put
+            patterns under.</p>
+
+        <a class="btn btn-info btn-xs" href="{{ path('pattern_add') }}">Create New Pattern</a>
+
+    {% endif %}
+{% endblock %}
