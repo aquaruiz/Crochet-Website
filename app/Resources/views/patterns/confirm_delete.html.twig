@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block main_title %}Edit Pattern{% endblock %}
+
+{% block body %}
+    <p>Are you sure that you want to DELETE you pattern named
+    {{ pattern.name|upper }}?</p>
+    {{ form_start(delete_form) }}
+
+    {#{{ form_row(delete_form.name) }}#}
+
+    <button class="btn btn-primary" formnovalidate>Delete Pattern? <span class="glyphicon glyphicon-arrow-right"></span>
+    </button>
+
+    {{ form_end(delete_form) }}
+{% endblock %}

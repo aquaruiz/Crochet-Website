@@ -6,8 +6,11 @@ use CrochetLibraryBundle\Entity\Difficulty;
 use CrochetLibraryBundle\Entity\Hook;
 use CrochetLibraryBundle\Entity\Pattern;
 use CrochetLibraryBundle\Form\DifficultyType;
+use CrochetLibraryBundle\Form\PatternDeleteType;
+use CrochetLibraryBundle\Form\PatternEditType;
 use CrochetLibraryBundle\Form\PatternType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -136,20 +139,58 @@ class PatternController extends Controller
     }
 
     /**
-     * @Route("/pattern/{id}", name="pattern_edit")
-     * @param $id
+     * @Route("/pattern/edit/{id}", name="pattern_edit")
+     * @param Request $request
+     * @param Pattern $pattern
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
      */
-    public function editAction($id)
+    public function editAction(Request $request, Pattern $pattern)
     {
+        $user = $this->getUser()->getId();
 
+        $editForm = $this->createForm(PatternEditType::class, $pattern);
+        $editForm->handleRequest($request);
+
+        if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->merge($pattern);
+            $em->flush();
+
+            return $this->redirectToRoute('pattern_view', array(
+                'id' => $pattern->getId()
+            ));
+        }
+
+        return $this->render('patterns/edit.html.twig', array(
+            'pattern' => $pattern,
+            'edit_form' => $editForm->createView(),
+        ));
     }
 
     /**
-     * @Route("/pattern/{id}", name="pattern_delete")
-     * @param $id
+     * @Route("/pattern/delete/{id}", name="pattern_delete")
+     * @param Request $request
+     * @param Pattern $pattern
      * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
-    public function deleteAction($id)
-    {}
+    public function deleteAction(Request $request, Pattern $pattern)
+    {
+        $deleteForm = $this->createForm(PatternDeleteType::class, $pattern);
+        $deleteForm->handleRequest($request);
+
+        if ($deleteForm->isSubmitted() && $deleteForm->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($pattern);
+            $em->flush();
+
+            return $this->redirectToRoute("user_patterns");
+        }
+
+        return $this->render('patterns/confirm_delete.html.twig',
+            ['pattern' => $pattern,
+                'delete_form' => $deleteForm->createView()]);
+
+    }
 }

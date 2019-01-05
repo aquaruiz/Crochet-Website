@@ -2,61 +2,21 @@
 {% block main_title %}Edit Pattern{% endblock %}
 
 {% block body %}
-    {% if pattern == false %}
-    <div>none</div>
-    {% else %}
-    <div class="product-container">
-    <h4>{{ pattern.name }} </h4>
-    <h5>by {{ pattern.designer.name }}</h5>
-    <div class="product-body">
-    <p>
-    Categories:
-    {% if pattern.categories|length > 0 %}
-        <ul>
-        {% for category in pattern.categories %}
-            <li>{{ category.name }}</li>
-        {% endfor %}
-            </ul>
-    {% else %}
-        none
-        {% endif %}
-        </p>
-        <img width="250px" src="{{ asset('uploads/images/patterns/pictures/' ~ pattern.picture) }}"
-             alt="{{ pattern.name }} by {{ pattern.designer.name }}" class="img-thumbnail rounded float-center">
-        <p>
-            Published on: {{ pattern.publishedDate|date("F jS \\a\\t g:ia", 'Europe/Sofia') }}
-        </p>
-        <p>
-            Description: {{ pattern.patternText }}
-        </p>
-        <p>
-            Gauge: {{ pattern.gauge }}
-        </p>
-        <p>
-            Yardage: {{ pattern.yardage }}
-        </p>
-        <p>
-            Hook Size: {{ pattern.hook.size }}
-        </p>
-        <p>
-            Hook Size Letter: {{ pattern.hook.letter }}
-        </p>
-        <p>
-            Likes:
-            {{ pattern.likes|length }}
-        </p>
-        </div>
-        <div class="product-buttons">
-            <a class="btn btn-info btn-xs" href="{{ asset('uploads/images/patterns/files/' ~ pattern.file) }}"
-               download="pattern-{{ pattern.name }}">Download your file</a>
-            {% if likable %}
-                <a class="btn btn-success btn-xs" href="{{ path('pattern_likes', {id: pattern.id}) }}">Like it!</a>
-            {% else %}
-                <a class="btn btn-outline-danger btn-xs btn-disabled">You Liked This</a>
-            {% endif %}
-            <a class="btn btn-outline-info btn-xs" href="{{ path('pattern_diff', {id: pattern.id}) }}">Set Diff
-                Level!</a>
-        </div>
-        </div>
-    {% endif %}
+    {{ form_start(edit_form) }}
+
+    {{ form_row(edit_form.name) }}
+    {{ form_row(edit_form.price) }}
+    {{ form_row(edit_form.hook) }}
+    {{ form_row(edit_form.gauge) }}
+    {#{{ form_row(pattern_add_form.yarn) }}#}
+    {{ form_row(edit_form.yardage) }}
+    {{ form_row(edit_form.patternText) }}
+    {{ form_row(edit_form.categories) }}
+    {#{{ form_row(edit_form.picture) }}#}
+    {#{{ form_row(edit_form.file) }}#}
+
+    <button class="btn btn-primary" formnovalidate>Edit Pattern <span class="glyphicon glyphicon-arrow-right"></span>
+    </button>
+
+    {{ form_end(edit_form) }}
 {% endblock %}
