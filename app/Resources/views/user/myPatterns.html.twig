@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {% if patterns %}
+    <div class="row">
+        {% for pattern in patterns %}
+            <div class="product-container">
+                <h4>{{ pattern.name }} </h4>
+                <h5>by {{ pattern.designer.name }}</h5>
+                <div class="product-body">
+                    <img width="250px" src="{{ asset('uploads/images/patterns/pictures/' ~ pattern.picture) }}"
+                         alt="{{ pattern.name }} by {{ pattern.designer.name }}"
+                         class="img-thumbnail rounded float-center">
+                </div>
+                <div class="product-buttons">
+                    <a class="btn btn-info btn-xs" href="{{ path('pattern_view', {'id':pattern.id}) }}">Details</a>
+                    <a class="btn btn-primary btn-xs" href="{{ path('pattern_edit', {'id':pattern.id}) }}">Edit</a>
+                    <a class="btn btn-danger btn-xs" href="{{ path('pattern_delete', {'id':pattern.id}) }}">Delete</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% else %}
+        <p>Dear {{ user.name|upper }}, <br> You haven't done any crochet pattern contribution yet. Do you want to design one now?</p>
+        <a class="btn btn-info btn-xs" href="{{ path('pattern_add') }}">Create New Pattern</a>
+
+    {% endif %}
+    </div>
+{% endblock %}

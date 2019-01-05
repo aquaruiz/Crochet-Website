@@ -1,9 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Hello, {{ user.name }}! :-P</h1>
+    <h1>Hello, {{ user.name|upper }}! :-P</h1>
     <p>Show me your portfolio:
         <br>{{ user.portfolio }}
+
         <br></br>:-P</p>
+
+    <a class="btn btn-primary btn-xs" href="{{ path('user_patterns') }}">Edit/Delete Your Patterns</a>
 
 {% endblock %}

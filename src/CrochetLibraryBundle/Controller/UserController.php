@@ -2,9 +2,11 @@
 
 namespace CrochetLibraryBundle\Controller;
 
+use CrochetLibraryBundle\Entity\Pattern;
 use CrochetLibraryBundle\Entity\Role;
 use CrochetLibraryBundle\Entity\User;
 use CrochetLibraryBundle\Form\UserType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -72,6 +74,7 @@ class UserController extends Controller
 
     /**
      * @Route("/profile", name="user_profile")
+     * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function profile()
@@ -84,5 +87,21 @@ class UserController extends Controller
 
         return $this->render('user/profile.html.twig',
             ['user' => $user]);
+    }
+
+    /**
+     * @Route("/profile/mypatterns", name="user_patterns")
+     * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function showMyPatterns(){
+        $currentUser = $this->getUser();
+
+        $em = $this->getDoctrine()->getManager();
+        $myPatterns = $em->getRepository(Pattern::class)->findBy(['designer' => $currentUser]);
+
+        return $this->render('user/mypatterns.html.twig',
+            ['patterns' => $myPatterns,
+                'user' => $currentUser]);
     }
 }

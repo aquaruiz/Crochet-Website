@@ -141,7 +141,9 @@ class PatternController extends Controller
      * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
      */
     public function editAction($id)
-    {}
+    {
+
+    }
 
     /**
      * @Route("/pattern/{id}", name="pattern_delete")
