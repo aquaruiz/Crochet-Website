@@ -2,22 +2,37 @@
 {% block body %}
     <div class="row">
         {% for pattern in patterns %}
-            <div class="product-container">
-                <h4>{{ pattern.name }} </h4>
-                <h5>by {{ pattern.designer.name }}</h5>
+            <div class="product-container"
+                 style="border: 1px dotted gray; border-radius: 10px; padding: 5px; margin: 10px">
+                <h4 style="color: teal; text-align: center">{{ pattern.name|upper }} </h4>
+                <h5 style="text-align: right">by {{ pattern.designer.name }}</h5>
                 <div class="product-body">
                     <img width="250px" src="{{ asset('uploads/images/patterns/pictures/' ~ pattern.picture) }}"
                          alt="{{ pattern.name }} by {{ pattern.designer.name }}"
                          class="img-thumbnail rounded float-center">
                 </div>
                 <div class="product-buttons">
-                    <a class="btn btn-info btn-xs" href="{{ path('pattern_view', {'id':pattern.id}) }}">Details</a>
-                    {#{% if app.user %}#}
-                    {#{% if is_granted('ROLE_ADMIN') %}#}
-                    {#<a class="btn btn-primary btn-xs" href="{{ path('pattern_edit', {'id':pattern.id}) }}">Edit</a>#}
-                    {#<a class="btn btn-danger btn-xs" href="{{ path('pattern_delete', {'id':pattern.id}) }}">Delete</a>#}
-                    {#{% endif %}#}
-                    {#{% endif %}#}
+                    <a class="btn btn-info btn-xs" href="{{ path('pattern_view', {'id':pattern.id}) }}">See Details</a>
+                    {% if app.user %}
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <a class="btn btn-primary btn-xs"
+                               href="{{ path('pattern_edit', {'id':pattern.id}) }}">Edit</a>
+                            <a class="btn btn-danger btn-xs" href="{{ path('pattern_delete', {'id':pattern.id}) }}">Delete</a>
+                        {% endif %}
+                    {% endif %}
+
+                </div>
+                <div class="product-buttons">
+                    Categories:
+                    <ul>
+                        {% for category in pattern.categories %}
+                            <li>
+                                <a class="card-link" href="{{ path('category_view', {'id':category.id}) }}">
+                                    {{ category.name }}
+                                </a><br>
+                            </li>
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
         {% endfor %}
