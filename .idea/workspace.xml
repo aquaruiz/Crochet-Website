@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6d33324-8fea-4860-b2f7-49c693f71adc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/DifficultyController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CrochetLibraryBundle/Form/DifficultyType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Resources/views/rates/difficulty_level.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Crochet-website.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Crochet-website.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/composerJson.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/composerJson.xml" afterDir="false" />
@@ -17,11 +16,13 @@
       <change beforePath="$PROJECT_DIR$/app/Resources/views/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/security/login.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/user/profile.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/user/profile.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/user/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/user/register.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/DifficultyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/DifficultyController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/PatternController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/PatternController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/SecurityController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrochetLibraryBundle/Entity/Difficulty.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrochetLibraryBundle/Entity/Difficulty.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrochetLibraryBundle/Entity/Pattern.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrochetLibraryBundle/Entity/Pattern.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CrochetLibraryBundle/Form/DifficultyType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrochetLibraryBundle/Form/DifficultyType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CrochetLibraryBundle/Repository/DifficultyRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrochetLibraryBundle/Repository/DifficultyRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/styles/style.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,22 +37,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Entity/Pattern.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="145" column="52" selection-start-line="145" selection-start-column="52" selection-end-line="145" selection-end-column="52" />
-              <folding>
-                <element signature="e#47#95#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Form/PatternType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="30" column="39" selection-start-line="28" selection-start-column="12" selection-end-line="33" selection-end-column="18" />
+            <state relative-caret-position="209">
+              <caret line="57" column="7" selection-start-line="57" selection-start-column="7" selection-end-line="57" selection-end-column="7" />
               <folding>
                 <element signature="e#45#86#0#PHP" expanded="true" />
               </folding>
@@ -60,22 +49,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Entity/Difficulty.php">
+        <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/PatternController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="37" column="7" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
+            <state relative-caret-position="328">
+              <caret line="131" column="5" selection-start-line="131" selection-start-column="5" selection-end-line="131" selection-end-column="5" />
+              <folding>
+                <element signature="e#51#94#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/PatternController.php">
+        <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Repository/PatternRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="73">
-              <caret line="33" column="39" lean-forward="true" selection-start-line="32" selection-start-column="8" selection-end-line="33" selection-end-column="39" />
-              <folding>
-                <element signature="e#51#94#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="204">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/rates/difficulty_level.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -83,8 +81,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/DifficultyController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+            <state relative-caret-position="73">
+              <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
               <folding>
                 <element signature="e#51#94#0#PHP" expanded="true" />
               </folding>
@@ -93,10 +91,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/patterns/view.html.twig">
+        <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Repository/DifficultyRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="65" column="14" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
+            <state relative-caret-position="243">
+              <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+              <folding>
+                <element signature="e#51#94#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/patterns/add.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="107">
+              <caret line="8" column="19" selection-start-line="8" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -104,8 +114,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Form/DifficultyType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+            <state relative-caret-position="294">
+              <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
               <folding>
                 <element signature="e#45#88#0#PHP" expanded="true" />
               </folding>
@@ -142,6 +152,9 @@
       <find>dash</find>
       <find>getL</find>
       <find>SoftUniBlog</find>
+      <find>dif</find>
+      <find>DIFF</find>
+      <find>is</find>
     </findStrings>
     <replaceStrings>
       <replace>CrochetLibraryBundle</replace>
@@ -177,19 +190,22 @@
         <option value="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/SecurityController.php" />
         <option value="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/UserController.php" />
         <option value="$PROJECT_DIR$/src/CrochetLibraryBundle/Form/UserType.php" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/src/CrochetLibraryBundle/Entity/Hook.php" />
         <option value="$PROJECT_DIR$/src/CrochetLibraryBundle/Entity/Category.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/patterns/add.html.twig" />
-        <option value="$PROJECT_DIR$/src/CrochetLibraryBundle/Repository/PatternRepository.php" />
         <option value="$PROJECT_DIR$/src/CrochetLibraryBundle/Form/PatternType.php" />
         <option value="$PROJECT_DIR$/src/CrochetLibraryBundle/Form/DiffucultyType.php" />
         <option value="$PROJECT_DIR$/var/cache/dev/ContainerAaxarf6/getDiffucultyTypeService.php" />
         <option value="$PROJECT_DIR$/src/CrochetLibraryBundle/Entity/Pattern.php" />
         <option value="$PROJECT_DIR$/src/CrochetLibraryBundle/Entity/Difficulty.php" />
-        <option value="$PROJECT_DIR$/src/CrochetLibraryBundle/Form/DifficultyType.php" />
-        <option value="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/PatternController.php" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/app/Resources/views/rates/difficulty.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/patterns/view.html.twig" />
+        <option value="$PROJECT_DIR$/src/CrochetLibraryBundle/Form/DifficultyType.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/rates/difficulty_level.html.twig" />
+        <option value="$PROJECT_DIR$/src/CrochetLibraryBundle/Repository/DifficultyRepository.php" />
+        <option value="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/PatternController.php" />
+        <option value="$PROJECT_DIR$/src/CrochetLibraryBundle/Repository/PatternRepository.php" />
         <option value="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/DifficultyController.php" />
       </list>
     </option>
@@ -290,6 +306,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -307,45 +324,6 @@
               <item name="Crochet-website" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Crochet-website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Crochet-website" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Crochet-website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Crochet-website" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="default" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Crochet-website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Crochet-website" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="patterns" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Crochet-website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Crochet-website" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="security" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Crochet-website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Crochet-website" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Crochet-website" type="b2602c69:ProjectViewProjectNode" />
@@ -378,6 +356,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="CrochetLibraryBundle" type="462c0819:PsiDirectoryNode" />
               <item name="Form" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Crochet-website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Crochet-website" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="CrochetLibraryBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Repository" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Crochet-website" type="b2602c69:ProjectViewProjectNode" />
@@ -427,7 +412,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -439,6 +423,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Git-Repos\Crochet-website\app\Resources\views\rates" />
       <recent name="D:\Git-Repos\Crochet-website\app\Resources\views\patterns" />
       <recent name="D:\Git-Repos\Crochet-website\app\Resources\views\default" />
       <recent name="D:\Git-Repos\Crochet-website\src\CrochetLibraryBundle\Form" />
@@ -471,18 +456,19 @@
       <workItem from="1546099572182" duration="19996000" />
       <workItem from="1546199732828" duration="7000" />
       <workItem from="1546202608967" duration="16109000" />
-      <workItem from="1546355354595" duration="19316000" />
+      <workItem from="1546355354595" duration="19487000" />
+      <workItem from="1546688681945" duration="7033000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58217000" />
+    <option name="totallyTimeSpent" value="65421000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25718608" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26096824" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -514,13 +500,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/parameters.yml.dist">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -533,9 +512,6 @@
     <entry file="file://$PROJECT_DIR$/app/Resources/views/security/login2.html.twig" />
     <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Form/RegisterForm.php" />
     <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Repository/CategoryRepository.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Repository/DifficultyRepository.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Repository/HookRepository.php">
@@ -555,13 +531,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -632,34 +601,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Repository/PatternRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
@@ -694,46 +635,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/var/cache/dev/ContainerAaxarf6/getDiffucultyTypeService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/var/cache/dev/ContainerAaxarf6/getDiffucultyTypeService.php" />
     <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
           <caret line="51" column="42" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="42" />
           <folding>
             <element signature="e#47#95#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Entity/Pattern.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="145" column="52" selection-start-line="145" selection-start-column="52" selection-end-line="145" selection-end-column="52" />
-          <folding>
-            <element signature="e#47#95#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Entity/Difficulty.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="37" column="7" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Form/PatternType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="30" column="39" selection-start-line="28" selection-start-column="12" selection-end-line="33" selection-end-column="18" />
-          <folding>
-            <element signature="e#45#86#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -745,13 +653,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/patterns/add.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="12" column="48" lean-forward="true" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/security/login.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="124">
@@ -759,37 +660,144 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Entity/Pattern.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2448">
+          <caret line="145" column="52" selection-start-line="145" selection-start-column="52" selection-end-line="145" selection-end-column="52" />
+          <folding>
+            <element signature="e#47#95#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Entity/Difficulty.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="48" column="18" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/sensio/framework-extra-bundle/Configuration/Security.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="16" column="48" lean-forward="true" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/rates/difficulty.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/patterns/view.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="65" column="14" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
+        <state relative-caret-position="260">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Form/PatternType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="57" column="7" selection-start-line="57" selection-start-column="7" selection-end-line="57" selection-end-column="7" />
+          <folding>
+            <element signature="e#45#86#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/patterns/add.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="8" column="19" selection-start-line="8" selection-end-line="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Form/DifficultyType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        <state relative-caret-position="294">
+          <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
           <folding>
             <element signature="e#45#88#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/PatternController.php">
+    <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Repository/DifficultyRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="33" column="39" lean-forward="true" selection-start-line="32" selection-start-column="8" selection-end-line="33" selection-end-column="39" />
+        <state relative-caret-position="243">
+          <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
           <folding>
             <element signature="e#51#94#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Repository/PatternRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/PatternController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="131" column="5" selection-start-line="131" selection-start-column="5" selection-end-line="131" selection-end-column="5" />
+          <folding>
+            <element signature="e#51#94#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/rates/difficulty_level.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/DifficultyController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+        <state relative-caret-position="73">
+          <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
           <folding>
             <element signature="e#51#94#0#PHP" expanded="true" />
           </folding>

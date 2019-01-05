@@ -75,6 +75,7 @@ class PatternController extends Controller
     /**
      * @Route("/pattern/{id}", name="pattern_view")
      * @param $id
+     * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function viewAction($id)
@@ -91,7 +92,7 @@ class PatternController extends Controller
 
         if (!in_array($user, $likes->getValues())) {
             $likable = true;
-            var_dump($likable);
+//            var_dump($likable);
         }
 
         return $this->render("patterns/view.html.twig",
@@ -100,7 +101,7 @@ class PatternController extends Controller
     }
 
     /**
-     * @Route("/pattern/{id}", name="pattern_likes")
+     * @Route("/pattern/{id}/liked", name="pattern_likes")
      * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
      * @param $id
      * @return \Symfony\Component\HttpFoundation\Response

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block main_title %}Set Level{% endblock %}
+
+{% block body %}
+    {{ form_start(diff_form) }}
+    {{ form_row(diff_form.level) }}
+
+    <button class="btn btn-primary" formnovalidate>Set Level <span class="glyphicon glyphicon-arrow-right"></span>
+    </button>
+    {{ form_end(diff_form) }}
+{% endblock %}

@@ -2,6 +2,11 @@
 
 namespace CrochetLibraryBundle\Repository;
 
+use CrochetLibraryBundle\Entity\Difficulty;
+use CrochetLibraryBundle\Entity\Pattern;
+use CrochetLibraryBundle\Entity\User;
+use Doctrine\ORM\NonUniqueResultException;
+
 /**
  * DifficultyRepository
  *
@@ -10,4 +15,16 @@ namespace CrochetLibraryBundle\Repository;
  */
 class DifficultyRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function diff(Difficulty $difficulty){
+            return $this->createQueryBuilder('u')
+                ->update()
+                ->set('u.level', '?1')
+                ->setParameter(1, $difficulty->getLevel())
+                ->where('u.user_id = ?2')
+                ->setParameter(2, $difficulty->getUser()->getId())
+                ->where('u.pattern_id = ?3')
+                ->setParameter(3, $difficulty->getPattern()->getId())
+                ->getQuery()
+                ->getResult();
+    }
 }
