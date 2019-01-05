@@ -98,7 +98,7 @@ class UserController extends Controller
         $currentUser = $this->getUser();
 
         $em = $this->getDoctrine()->getManager();
-        $myPatterns = $em->getRepository(Pattern::class)->findBy(['designer' => $currentUser]);
+        $myPatterns = $em->getRepository(Pattern::class)->findBy(['designer' => $currentUser], ['publishedDate' => 'DESC']);
 
         return $this->render('user/mypatterns.html.twig',
             ['patterns' => $myPatterns,

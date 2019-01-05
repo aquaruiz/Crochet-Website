@@ -1,9 +1,10 @@
 {% extends 'base.html.twig' %}
 {% block body %}
+    <header style="color: teal"><h2>Recently Added Patterns</h2></header>
     <div class="row">
         {% for pattern in patterns %}
             <div class="product-container"
-                 style="border: 1px dotted gray; border-radius: 10px; padding: 5px; margin: 10px">
+                 style="border: 1px dotted gray; border-radius: 10px; padding: 5px; margin: 10px; display: inline-block">
                 <h4 style="color: teal; text-align: center">{{ pattern.name|upper }} </h4>
                 <h5 style="text-align: right">by {{ pattern.designer.name }}</h5>
                 <div class="product-body">
@@ -24,15 +25,19 @@
                 </div>
                 <div class="product-buttons">
                     Categories:
-                    <ul>
-                        {% for category in pattern.categories %}
-                            <li>
-                                <a class="card-link" href="{{ path('category_view', {'id':category.id}) }}">
-                                    {{ category.name }}
-                                </a><br>
-                            </li>
-                        {% endfor %}
-                    </ul>
+                    {% if pattern.categories|length > 0 %}
+                        <ul style="list-style: none; display: inline-block;">
+                            {% for category in pattern.categories %}
+                                <li style="display: inline;">
+                                    <a class="card-link" href="{{ path('category_view', {'id':category.id}) }}">
+                                        {{ category.name }}
+                                    </a>|
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        none
+                    {% endif %}
                 </div>
             </div>
         {% endfor %}

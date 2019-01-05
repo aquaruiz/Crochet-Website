@@ -2,11 +2,14 @@
 
 {% block body %}
     <h1>Hello, {{ user.name|upper }}! :-P</h1>
-    <p>Show me your portfolio:
-        <br>{{ user.portfolio }}
-
-        <br></br>:-P</p>
-
+    <div style="float: left; padding: 20px;">
+        <p>This is the {{ user.name }}'s picture</p>
+    <img width="250px" src="{{ asset('uploads/images/users/' ~ user.picture) }}"
+         alt="{{ user.name }}" class="img-thumbnail rounded float-center">
+    </div>
+    <div style="padding: 20px; margin: 20px">
+    <p>Show me your portfolio, {{ user.name }}
+        <br>:-P</p>
     <a class="btn btn-primary btn-xs" href="{{ path('user_patterns') }}">Edit/Delete Your Patterns</a>
-
+    </div>
 {% endblock %}
