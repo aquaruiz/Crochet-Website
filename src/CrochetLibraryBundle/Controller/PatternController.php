@@ -87,13 +87,17 @@ class PatternController extends Controller
             ->find($id);
 
         $user = $this->getUser();
-        $likable = false;
-        $likes = $pattern->getLikes();
 
-        if (!in_array($user, $likes->getValues())) {
-            $likable = true;
-//            var_dump($likable);
+        $likable = false;
+
+        if ($pattern) {
+            $likes = $pattern->getLikes();
+
+            if (!in_array($user, $likes->getValues())) {
+                $likable = true;
+            }
         }
+
 
         return $this->render("patterns/view.html.twig",
             ['pattern' => $pattern,
@@ -130,4 +134,20 @@ class PatternController extends Controller
             ['pattern' => $pattern,
                 'likable' => false]);
     }
+
+    /**
+     * @Route("/pattern/{id}", name="pattern_edit")
+     * @param $id
+     * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
+     */
+    public function editAction($id)
+    {}
+
+    /**
+     * @Route("/pattern/{id}", name="pattern_delete")
+     * @param $id
+     * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
+     */
+    public function deleteAction($id)
+    {}
 }

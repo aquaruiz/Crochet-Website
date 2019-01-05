@@ -2,69 +2,61 @@
 {% block main_title %}View Pattern{% endblock %}
 
 {% block body %}
-    <div>
-        Name: {{ pattern.name }}
-    </div>
-    <div>
-        Categories:
-        <ul>
-            {% for category in pattern.categories %}
-                <li>{{ category.name }}</li>
-            {% endfor %}
-        </ul>
-    </div>
-    <div>
-        By: {{ pattern.designer.name }}
-    </div>
-    <div>
-        Price: {{ pattern.price }} $
-    </div>
-    <div>
-        Published on: {{ pattern.publishedDate|date("F jS \\a\\t g:ia", 'Europe/Sofia') }}
-    </div>
-    <div>
-        Gauge: {{ pattern.gauge }}
-    </div>
-    <div>
-        Yardage: {{ pattern.yardage }}
-    </div>
-    <div>
-        Description: {{ pattern.patternText }}
-    </div>
-    <div>
-        Hook Size: {{ pattern.hook.size }}
-    </div>
-    <div>
-        Hook Size Letter: {{ pattern.hook.letter }}
-    </div>
-    <div>
-        Pictures:
-        <img src="{{ asset('uploads/images/patterns/pictures/' ~ pattern.picture) }}" alt="{{ pattern.name }}"
-             height="100px">
-    </div>
-    <div>
-        Download your file:
-        <a href="{{ asset('uploads/images/patterns/files/' ~ pattern.file) }}" download="pattern-{{ pattern.name }}">File</a>
-    </div>
-    <div>
-        Likes:
-        {{ pattern.likes|length }}
-
-    </div>
-    {% if (likable) %}
-        <a class="btn btn"
-           href="{{ path('pattern_likes', {id: pattern.id}) }}">Like it!
-        </a>
+    {% if pattern == false %}
+    <div>none</div>
     {% else %}
-        You Liked This!
+    <div class="product-container">
+    <h4>{{ pattern.name }} </h4>
+    <h5>by {{ pattern.designer.name }}</h5>
+    <div class="product-body">
+    <p>
+    Categories:
+    {% if pattern.categories|length > 0 %}
+        <ul>
+        {% for category in pattern.categories %}
+            <li>{{ category.name }}</li>
+        {% endfor %}
+            </ul>
+    {% else %}
+        none
+        {% endif %}
+        </p>
+        <img width="250px" src="{{ asset('uploads/images/patterns/pictures/' ~ pattern.picture) }}"
+             alt="{{ pattern.name }} by {{ pattern.designer.name }}" class="img-thumbnail rounded float-center">
+        <p>
+            Published on: {{ pattern.publishedDate|date("F jS \\a\\t g:ia", 'Europe/Sofia') }}
+        </p>
+        <p>
+            Description: {{ pattern.patternText }}
+        </p>
+        <p>
+            Gauge: {{ pattern.gauge }}
+        </p>
+        <p>
+            Yardage: {{ pattern.yardage }}
+        </p>
+        <p>
+            Hook Size: {{ pattern.hook.size }}
+        </p>
+        <p>
+            Hook Size Letter: {{ pattern.hook.letter }}
+        </p>
+        <p>
+            Likes:
+            {{ pattern.likes|length }}
+        </p>
+        </div>
+        <div class="product-buttons">
+            <a class="btn btn-info btn-xs" href="{{ asset('uploads/images/patterns/files/' ~ pattern.file) }}"
+               download="pattern-{{ pattern.name }}">Download your file</a>
+            {% if likable %}
+                <a class="btn btn-success btn-xs" href="{{ path('pattern_likes', {id: pattern.id}) }}">Like it!</a>
+            {% else %}
+                <a class="btn btn-outline-danger btn-xs btn-disabled">You Liked This</a>
+            {% endif %}
+            <a class="btn btn-outline-info btn-xs" href="{{ path('pattern_diff', {id: pattern.id}) }}">Set Diff
+                Level!</a>
+        </div>
+        </div>
     {% endif %}
-    <div>
-        <a class="btn btn"
-           href="{{ path('pattern_diff', {id: pattern.id}) }}">Set Diff Level!
-        </a>
-    </div>
-    {#<form method="post" action="{{ path('difficulty_add', {id: pattern.id}) }}">#}
-        {#1<input step="1" type="range" min="1" max="10" name="level"/>10#}
-        {#<button type="submit" class="btn btn-primary">Set Diff Level</button>#}
-    {#</form>#}
 {% endblock %}

@@ -18,22 +18,18 @@ class DifficultyController extends Controller
      * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
      * @param Request $request
      * @param Pattern $pattern
-     * @param $id
      * @return \Symfony\Component\HttpFoundation\Response
-     * @throws \Exception
      */
-    public function diff(Request $request, Pattern $pattern)
+    public function updateDiff(Request $request, Pattern $pattern)
     {
         $diff = new Difficulty();
         $form = $this->createForm(DifficultyType::class, $diff);
         $form->handleRequest($request);
 
         $diffs = count($pattern->getDifficulty());
-        var_dump($diffs);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $currentUser = $this->getUser();
-            var_dump($diff);
             $em = $this->getDoctrine()->getManager();
 
             $oldDiff = $this
