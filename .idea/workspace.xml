@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6d33324-8fea-4860-b2f7-49c693f71adc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Resources/views/categories/listAll.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Crochet-website.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Crochet-website.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/composerJson.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/composerJson.xml" afterDir="false" />
@@ -10,16 +9,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/categories/listAll.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/categories/listAll.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/categories/view.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/categories/view.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/default/dashboard.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/dashboard.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/patterns/view.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/patterns/view.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/security/login.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/user/profile.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/user/profile.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/user/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/user/register.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/CategoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/CategoriesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/DifficultyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/DifficultyController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/SecurityController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/scripts/script.js" afterDir="false" />
@@ -39,7 +35,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/DifficultyController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
+            <state relative-caret-position="748">
               <caret line="51" column="25" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="25" />
               <folding>
                 <element signature="e#51#94#0#PHP" expanded="true" />
@@ -51,7 +47,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/CategoriesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
+            <state relative-caret-position="646">
               <caret line="41" selection-start-line="41" selection-end-line="41" />
               <folding>
                 <element signature="e#51#92#0#PHP" expanded="true" />
@@ -63,21 +59,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/default/dashboard.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
+            <state relative-caret-position="510">
               <caret line="30" column="61" selection-start-line="30" selection-start-column="61" selection-end-line="33" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/categories/listAll.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="44" lean-forward="true" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
-              <folding>
-                <element signature="e#124#148#0#HTML" expanded="true" />
-                <element signature="e#215#416#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="170">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/categories/view.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="277">
+              <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -94,7 +95,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-12">
+            <state relative-caret-position="340">
               <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
             </state>
           </provider>
@@ -199,12 +200,12 @@
         <option value="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/UserController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/user/myPatterns.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/dashboard.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/categories/view.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/patterns/view.html.twig" />
         <option value="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/DifficultyController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/CategoriesController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/categories/listAll.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/categories/view.html.twig" />
       </list>
     </option>
   </component>
@@ -315,104 +316,6 @@
             <path>
               <item name="Crochet-website" type="b2602c69:ProjectViewProjectNode" />
               <item name="Crochet-website" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Crochet-website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Crochet-website" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Crochet-website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Crochet-website" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Crochet-website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Crochet-website" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="categories" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Crochet-website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Crochet-website" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="default" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Crochet-website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Crochet-website" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="patterns" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Crochet-website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Crochet-website" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="rates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Crochet-website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Crochet-website" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="security" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Crochet-website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Crochet-website" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Crochet-website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Crochet-website" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Crochet-website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Crochet-website" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="CrochetLibraryBundle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Crochet-website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Crochet-website" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="CrochetLibraryBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Crochet-website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Crochet-website" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="CrochetLibraryBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Crochet-website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Crochet-website" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="CrochetLibraryBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Form" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Crochet-website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Crochet-website" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -472,17 +375,18 @@
       <workItem from="1546202608967" duration="16109000" />
       <workItem from="1546355354595" duration="19487000" />
       <workItem from="1546688681945" duration="31372000" />
+      <workItem from="1546766805621" duration="1472000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89760000" />
+    <option name="totallyTimeSpent" value="91232000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26096824" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2647504" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -582,13 +486,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/rates/difficulty.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/rates/difficulty.html.twig" />
     <entry file="file://$PROJECT_DIR$/app/config/security.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -644,23 +542,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/DashboardController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#52#95#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/patterns/all.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/DashboardController.php" />
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/patterns/all.html.twig" />
     <entry file="file://$PROJECT_DIR$/app/Resources/views/rates/difficulty_level.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -810,13 +693,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/categories/view.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/DashboradController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
@@ -851,7 +727,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/DifficultyController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
+        <state relative-caret-position="748">
           <caret line="51" column="25" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="25" />
           <folding>
             <element signature="e#51#94#0#PHP" expanded="true" />
@@ -859,16 +735,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12">
-          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CrochetLibraryBundle/Controller/CategoriesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
+        <state relative-caret-position="646">
           <caret line="41" selection-start-line="41" selection-end-line="41" />
           <folding>
             <element signature="e#51#92#0#PHP" expanded="true" />
@@ -878,7 +747,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/dashboard.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
+        <state relative-caret-position="510">
           <caret line="30" column="61" selection-start-line="30" selection-start-column="61" selection-end-line="33" selection-end-column="41" />
         </state>
       </provider>
@@ -890,14 +759,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/categories/listAll.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="44" lean-forward="true" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
-          <folding>
-            <element signature="e#124#148#0#HTML" expanded="true" />
-            <element signature="e#215#416#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="170">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/categories/view.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
         </state>
       </provider>
     </entry>

@@ -2,28 +2,33 @@
 {% block body %}
     <h2>Patterns under Category {{ category.name|upper }}</h2>
     <div class="row">
-        {% for pattern in patterns %}
-            <div class="product-container"
-                 style="border: 1px dotted gray; border-radius: 10px; padding: 5px; margin: 10px; display: inline-block">
-                <h4 style="color: teal; text-align: center">{{ pattern.name|upper }} </h4>
-                <div class="product-body">
-                    <img width="250px" src="{{ asset('uploads/images/patterns/pictures/' ~ pattern.picture) }}"
-                         alt="{{ pattern.name }}"
-                         class="img-thumbnail rounded float-center">
-                </div>
-                <div class="product-buttons">
-                    <a class="btn btn-info btn-xs" href="{{ path('pattern_view', {'id':pattern.id}) }}">See Details</a>
-                    {% if app.user %}
-                        {% if is_granted('ROLE_ADMIN') %}
-                            <a class="btn btn-primary btn-xs"
-                               href="{{ path('pattern_edit', {'id':pattern.id}) }}">Edit</a>
-                            <a class="btn btn-danger btn-xs" href="{{ path('pattern_delete', {'id':pattern.id}) }}">Delete</a>
+        {% if patterns %}
+            {% for pattern in patterns %}
+                <div class="product-container"
+                     style="border: 1px dotted gray; border-radius: 10px; padding: 5px; margin: 10px; display: inline-block">
+                    <h4 style="color: teal; text-align: center">{{ pattern.name|upper }} </h4>
+                    <div class="product-body">
+                        <img width="250px" src="{{ asset('uploads/images/patterns/pictures/' ~ pattern.picture) }}"
+                             alt="{{ pattern.name }}"
+                             class="img-thumbnail rounded float-center">
+                    </div>
+                    <div class="product-buttons">
+                        <a class="btn btn-info btn-xs" href="{{ path('pattern_view', {'id':pattern.id}) }}">See
+                            Details</a>
+                        {% if app.user %}
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <a class="btn btn-primary btn-xs"
+                                   href="{{ path('pattern_edit', {'id':pattern.id}) }}">Edit</a>
+                                <a class="btn btn-danger btn-xs" href="{{ path('pattern_delete', {'id':pattern.id}) }}">Delete</a>
+                            {% endif %}
                         {% endif %}
-                    {% endif %}
 
+                    </div>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        {% else %}
+            Add some more patterns :)
+        {% endif %}
     </div>
     </div>
 {% endblock %}

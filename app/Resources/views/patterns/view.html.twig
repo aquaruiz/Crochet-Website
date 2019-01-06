@@ -7,7 +7,7 @@
     {% else %}
         <div class="product-container">
                 <div>
-                    <img width="550px" src="{{ asset('uploads/images/patterns/pictures/' ~ pattern.picture) }}"
+                    <img height="250px" src="{{ asset('uploads/images/patterns/pictures/' ~ pattern.picture) }}"
                          alt="{{ pattern.name }} by {{ pattern.designer.name }}"
                          class="img-thumbnail rounded float-center" style="float: right">
             <h2>{{ pattern.name }} </h2>
@@ -52,7 +52,7 @@
             </div>
             <div class="product-buttons">
                 <a class="btn btn-info btn-xs" href="{{ asset('uploads/images/patterns/files/' ~ pattern.file) }}"
-                   download="pattern-{{ pattern.name }}">Download Pattern file</a>
+                   download="pattern-{{ pattern.name }}.pdf">Download Pattern PDF</a>
                 {% if likable %}
                     <a class="btn btn-success btn-xs" href="{{ path('pattern_likes', {id: pattern.id}) }}">Like it!</a>
                 {% else %}
